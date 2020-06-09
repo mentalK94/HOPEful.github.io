@@ -43,7 +43,7 @@ sitemap :
 - (주의점) 미리 생성해놓고 사용될 때 가져다 사용하는 방식으로 사용하지 않아도 메모리 점유하고 있으므로 메모리의 낭비가 있다
 
 ## LazyHolder
-- ![lazyholder](https://user-images.githubusercontent.com/31653025/64708206-313f1200-d4ef-11e9-9795-eec0482bb24c.PNG)
+![lazyholder](https://user-images.githubusercontent.com/31653025/64708206-313f1200-d4ef-11e9-9795-eec0482bb24c.PNG)
 
 * 이 방법은 JAVA버전과 무관하게 성능이 뛰어난 방법이다. static영역에 초기화를 하지만 객체가 필요한 시점까지 최대한 초기화를 미루는 방식이다.
 * LazyHolder.INSTANCE를 참조하는 순간 Class가 로딩되며 초기화가 진행되고 이 시점에는 thread-safe를 보장하기 때문에 volatile이나 synchronized
