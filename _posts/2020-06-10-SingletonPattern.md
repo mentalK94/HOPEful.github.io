@@ -51,4 +51,4 @@ sitemap :
 
 # References
 > - [https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html](https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html)
-> - [JAVA 객체지향 디자인 패턴 정인상, 채흥석 저]
+> - [ JAVA 객체지향 디자인 패턴 정인상, 채흥석 저 ]
