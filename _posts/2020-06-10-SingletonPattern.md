@@ -21,8 +21,7 @@ sitemap :
 유일한 단일 객체를 반환할 수 있도록 정적 메소드를 지원해야한다. 
 
 ## 일반적인 싱글턴 패턴
-![캡처](https://user-images.githubusercontent.com/31653025/63952879-45c8e680-cabb-11e9-80b6-3ddea7d4fd3b.PNG)
-* [그림 1]
+![그림 1](https://user-images.githubusercontent.com/31653025/63952879-45c8e680-cabb-11e9-80b6-3ddea7d4fd3b.PNG)
 
 * 위 코드는 싱글턴 패턴 사용시 가장 많이 사용되는 코드이다. 일반적인 상황에서는 위 그림과 같이 Printer 클래스처럼 객체를 하나의 인스턴스로 만들어 사용해도 무방하다.
 
@@ -34,10 +33,8 @@ sitemap :
 
 ### solution 1. 동기화 사용
 ![동기화 사용](https://user-images.githubusercontent.com/31653025/63952919-537e6c00-cabb-11e9-9938-14d237138636.PNG)
-* [동기화 사용 코드]
 
 ![동기화 사용 결과](https://user-images.githubusercontent.com/31653025/63952921-55482f80-cabb-11e9-8276-154c1e0ab1d1.PNG)
-* [동기화 사용 결과]
 
 * 코드를 보면 함수에 synchronized를 사용하여 메서드 동기화를 한다. 따라서 결과 이미지를 보면 다중 스레드가 같은 객체를 공유함을 볼 수 있다.
 
@@ -47,7 +44,6 @@ sitemap :
 
 ## LazyHolder
 - ![lazyholder](https://user-images.githubusercontent.com/31653025/64708206-313f1200-d4ef-11e9-9795-eec0482bb24c.PNG)
-* [Lazyholder 코드]
 
 * 이 방법은 JAVA버전과 무관하게 성능이 뛰어난 방법이다. static영역에 초기화를 하지만 객체가 필요한 시점까지 최대한 초기화를 미루는 방식이다.
 * LazyHolder.INSTANCE를 참조하는 순간 Class가 로딩되며 초기화가 진행되고 이 시점에는 thread-safe를 보장하기 때문에 volatile이나 synchronized
