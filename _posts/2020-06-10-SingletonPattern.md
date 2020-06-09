@@ -1,12 +1,12 @@
 ---
 layout: post
-title: '[Design Patter] 싱글턴 패턴'
+title: '[Design Pattern] 싱글턴 패턴'
 subtitle: '싱글턴 패턴의 개념을 이해하고 구현할 수 있다.'
 date: 2020-06-10
 author: hansol Kim
 image: '/assets/article_images/designPattern/designPattern.jpg'
 categories: designPattern
-tags: designPattern
+tags: featured
 comments: true
 sitemap :
   changefreq : daily
