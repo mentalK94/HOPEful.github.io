@@ -1,2 +1,2 @@
-# mentalK94.github.io
-God발자
+# HOPEful.github.io
+개발자 블로그
