@@ -4,7 +4,8 @@ title: '[Design Patter] 싱글턴 패턴'
 subtitle: '싱글턴 패턴의 개념을 이해하고 구현할 수 있다.'
 date: 2020-06-10
 author: hansol Kim
-cover: '/images/designPattern/designPattern.jpg'
+image: '/images/designPattern/designPattern.jpg'
+categories: designPattern
 tags: designPattern
 comments: true
 sitemap :
