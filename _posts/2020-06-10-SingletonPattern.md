@@ -6,7 +6,7 @@ date: 2020-06-10
 author: hansol Kim
 image: '/assets/article_images/designPattern/designPattern.jpg'
 categories: Design Pattern
-tags: featured
+tags: 
 comments: true
 sitemap :
   changefreq : daily
