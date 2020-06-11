@@ -5,7 +5,7 @@ subtitle: '싱글턴 패턴의 개념을 이해하고 구현할 수 있다.'
 date: 2020-06-10
 author: hansol Kim
 image: '/assets/article_images/designPattern/designPattern.jpg'
-categories: Design Pattern
+categories: DesignPattern
 tags: 
 comments: true
 sitemap :
