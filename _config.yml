@@ -13,6 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+remote_theme: "mmistakes/jekyll-theme-basically-basic"
+
 lang: en-US
 title: Hansol's 개발 블로그;
 email: doingnow94@gmail.com
@@ -35,7 +37,6 @@ algolia:
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-basically-basic
 plugins: # previsously gems
   - jekyll-feed
   - jekyll-seo-tag
