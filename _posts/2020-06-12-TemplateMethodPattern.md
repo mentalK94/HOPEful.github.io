@@ -26,17 +26,14 @@ sitemap :
 
 * 현상
 ![templateMethod-move(HyundaiMotorClass)](https://user-images.githubusercontent.com/31653025/72792253-0bcfcb00-3c7c-11ea-88d8-78c35d78457a.PNG)
-[HyundaiMotor의 move메서드]
 ![templateMethod-move(LGMotorClass)](https://user-images.githubusercontent.com/31653025/72792256-0d998e80-3c7c-11ea-8baa-fdf70d382de3.PNG)
-[LGMotor의 move메서드]
 ![templateMethod-move(SamsungMotorClass)](https://user-images.githubusercontent.com/31653025/72792261-0f635200-3c7c-11ea-92a0-971f36e00072.PNG)
-[SamsungMotor의 move메서드]
 
 * 위 코드들을 보면 **move###Motor()**를 제외하고는 코드가 중복된다.
 
 ### 해결책
 ![templateMethod-Diagram2](https://user-images.githubusercontent.com/31653025/72793746-33c02e00-3c7e-11ea-9879-0de14c3d9eef.PNG)
-[다이어그램2]
+
 * 위에 다이어그램과 같이 추상클래스에서 move메서드를 구현한다.
 * 여기서 ***move메서드***를 **Template Method** 라고 부르며 ***moveMotor메서드***를 **Primitive Method** 또는 **Hook Method** 라 부른다.
 * **Primitive Method** 또는 **Hook Method** 를 구현하는 클래스를 **Concrete클래스** 라 부른다.
