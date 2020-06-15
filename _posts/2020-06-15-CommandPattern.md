@@ -15,16 +15,16 @@ sitemap :
 
 ## 커맨드 패턴이란?
 
-<!-- * 행위를 클래스로 캡슐화하여 동적으로 행위를 자유롭게 바꿀 수 있는 패턴이다. 즉, 전략을 쉽게 바꿀 수 있도록 해주는 디자인 패턴이다. -->
+* 이벤트가 발생했을 때 실행될 기능이 다양하면서도 추가 또는 변경이 필요한 경우에 이벤트를 발생시키는 클래스를 변경하지 않고 재사용하고자 할 때 사용하는 디자인 패턴이다.
 
-<!-- ## 스트래티지 패턴 클래스 다이어그램
+## 스트래티지 패턴 클래스 다이어그램
 ![스트래티지 패턴 클래스 다이어그램](https://user-images.githubusercontent.com/31653025/83719238-9d5f3880-a671-11ea-8d15-ea0d2153bede.PNG)
 
 * Strategy : 인터페이스나 추상클래스로 외부에서 동일한 방식으로 알고리즘을 호출하는 방법을 명시
 
 * ConcreteStrategy : 스트래티지 패턴에서 명시한 알고리즘을 실제로 구현한 클래스
 
-* Context : 스트래티지 패턴을 이용하는 역할을 수행하며, ConcreteStrategy를 바꿀 수 있도록 setter메서드(집약 관계)를 제공 -->
+* Context : 스트래티지 패턴을 이용하는 역할을 수행하며, ConcreteStrategy를 바꿀 수 있도록 setter메서드(집약 관계)를 제공
 
 ## 만능버튼 만들기 예시
 
@@ -138,11 +138,12 @@ public class Button {
 * 개선된 설계를 통해 *Button클래스* 의 *pressed()메서드* 는 command에게 실행을 위임하게 된다.
 * 즉, Command가 추가되더라도 *pressed()메서드* 는 변경되지 않는다.
 
-![Context에서 Setter생성](https://user-images.githubusercontent.com/31653025/83720534-2f684080-a674-11ea-9b06-4d9d281b42ff.png)
+![일반적인 커맨드 패턴 클래스 다이어그램](https://user-images.githubusercontent.com/31653025/84621599-eaff5f00-af15-11ea-90ff-80dfd52028c2.PNG)
 
-* Context인 **Robot**에서 **Strategy**를 사용할 수 있도록 **setter메소드**가 필요하다.
-* 이렇게 변경된 구조는 향후 등장할 이동 방식과 공격 방식의 변화뿐만 아니라 현재 변화도 잘 처리할 수 있게 된다.
-* Strategy Interface가 변화에 대한 일종의 **방화벽**역할을 수행하여 Robot클래스의 변경을 차단한다.(OCP만족하는 설계) -->
+* Command : 실행될 기능에 대한 인터페이스. 실행될 기능을 execute메서드로 선언함
+* ConcreteCommand : 실제로 실행되는 기능을 구현. 즉, Command 인터페이스를 구현함 (ex. AlarmStartCommand, LampOnCommand..)
+* Invoker : 기능의 실행을 요청하는 호출자 클래스 (ex. Button..)
+* Receiver : ConcreteCommand에서 execute메서드를 구현할 때 필요한 클래스. 즉, Concrete Command의 기능을 실행하기 위해 사용하는 수신자 클래스 (ex. Lamp, Alarm..)
 
 ## 참조
 > - [JAVA 객체지향 디자인 패턴 정인상, 채흥석 저]
