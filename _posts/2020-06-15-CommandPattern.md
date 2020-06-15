@@ -48,20 +48,95 @@ public class Button {
 ```
 
 ### 문제점
-* 누군가 버튼을 눌렀을 때 램프대신 다른 기능을 실행하게 하려면 어떤 변경 작업을 해야하는가? 예를 들어 알람이 켜지게 하려면?
-* 버튼을 누르는 동작에 따라 다른 기능을 실행하게 하려면 어떤 변경 작업을 해야하는가? 예를 들어 버튼을 처음 눌렀을 때 램프를 켜고, 두 번째 눌렀을 때 알람을 동작하게 하려면?
-* *Button클래스*의 *pressed메서드*를 수정해야한다. 즉 **OCP**에 위배된다.
+* (문제 1) 누군가 버튼을 눌렀을 때 램프대신 다른 기능을 실행하게 하려면 어떤 변경 작업을 해야하는가? 예를 들어 알람이 켜지게 하려면?
+* (문제 2) 버튼을 누르는 동작에 따라 다른 기능을 실행하게 하려면 어떤 변경 작업을 해야하는가? 예를 들어 버튼을 처음 눌렀을 때 램프를 켜고, 두 번째 눌렀을 때 알람을 동작하게 하려면?
 
-<!-- ### 해결책
-* 무엇이 변화되었는지 찾아야한다.
-* 변화된 것을 클래스로 캡슐화해야 한다.
-* **이동**과 **공격** 방법이 변화되었기 때문에 이를 클래스로 캡슐화한다.
+### 문제 1 - 버튼을 눌렀을 때 다른 기능을 실행하는 경우
+```
+package model;
 
-### 공격과 이동전략 인터페이스 설계
-![공격과 이동전략 인터페이스 설계](https://user-images.githubusercontent.com/31653025/83720447-0ba4fa80-a674-11ea-853d-a0172d7c2f0c.PNG)
+public class Button {
+	private Lamp lamp;
+	private Alarm alarm;
+	
+	public Button(Alarm alarm) {
+		// this.lamp = lamp;
+		this.alarm = alarm;
+	}
+	
+	public void pressed() {
+		// lamp.turnOn();
+		alarm.start();		
+	}
+}
+```
+* *Button클래스* 의 *pressed메서드* 를 수정해야한다. 즉 **OCP**에 위배된다.
+
+### 문제 2 - 버튼을 누르는 동작에 따라 다른 기능을 실행하는 경우
+```
+package model;
+
+import enumeration.Mode;
+
+public class Button {
+	private Lamp lamp;
+	private Alarm alarm;
+	private Mode mode;
+	
+	public Button(Lamp lamp, Alarm alarm) {
+		this.lamp = lamp;
+		this.alarm = alarm;
+	}
+	
+	public void setMode(Mode mode) {
+		this.mode = mode;
+	}
+	
+	public void pressed() {
+		switch (mode) {
+		case LAMP: // 램프모드인 경우
+			lamp.turnOn();
+			break;
+		case ALARM: // 알람모드인 경우
+			alarm.start();
+			break;
+		default:
+			break;
+		}		
+	}
+}
+```
+* *Button클래스* 의 *pressed메서드* 를 수정해야할 뿐만 아니라 새로운 기능 추가시 계속 수정해주어야한다.
+* 극단적으로 모드의 갯수가 100개면 Button생성자에 파라미터 수도 100개가 될 것이고, pressed메서드의 case문도 100개가 될 것이다.
+
+### 해결책
+![개선된 Button클래스 다이어그램](https://user-images.githubusercontent.com/31653025/84620646-83481480-af13-11ea-9549-9b2d2da74ef5.PNG)
+* *Button클래스* 의 *pressed메서드* 에서 직접 기능을 구현하지 않고 버튼을 눌렀을 때 *Button 클래스* 외부에서 제공받아 캡슐화하여 *pressed메서드* 에서 호출하도록 한다.
 
 ### 개선된 설계
 ![개선된 설계 다이어그램](https://user-images.githubusercontent.com/31653025/83720482-1d869d80-a674-11ea-8095-a19b5efc6ca9.PNG)
+
+```
+package model;
+
+import command.Command;
+
+public class Button {
+	private Command command;
+	
+	public Button() {}
+	
+	public void setCommand(Command command) {
+		this.command = command;
+	}
+	
+	public void pressed() {
+		command.execute();
+	}
+}
+```
+* 개선된 설계를 통해 *Button클래스* 의 *pressed()메서드* 는 command에게 실행을 위임하게 된다.
+* 즉, Command가 추가되더라도 *pressed()메서드* 는 변경되지 않는다.
 
 ![Context에서 Setter생성](https://user-images.githubusercontent.com/31653025/83720534-2f684080-a674-11ea-9b06-4d9d281b42ff.png)
 
