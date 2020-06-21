@@ -125,6 +125,7 @@ public class ScoreRecord {
 * *Subject라는 클래스* 를 정의하여 *attach메서드* 와 *detach메서드* 를 이용하여 성적 변경에 관심이 있는 객체를 추가하거나 제거한다.
 * *ScoreRecord 클래스* 의 *addScore메서드* 가 호출되면 *Subject클래스* 의 *notifyObservers메서드* 를 호출한다.
 * *notifyObservers메서드* 를 호출하여 옵저버들에게 성적 변경을 통보한다. 여기서 옵저버의 *update메서드* 를 호출한다.
+* **생각해보라!** 여기서 *Observer인 Statistics클래스* 가 추가된다 하더라도 *ScoreRecord클래스* 는 영향을 받지 않는다.
 
 ```
 package ex1;
