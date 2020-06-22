@@ -17,8 +17,8 @@ sitemap :
 
 - - -
 
-### 참조 주소
-* [http://postcode.map.daum.net/guide#usage](http://postcode.map.daum.net/guide#usage)
+### Link
+* [Daum 우편번호 API 주소](http://postcode.map.daum.net/guide#usage)
 
 ### script 추가
 ```
