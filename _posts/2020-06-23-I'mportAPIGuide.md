@@ -87,7 +87,7 @@ Vue.IMP().request_pay({
 * 형광으로 칠해진 부분은 테스트 모드를 적용한 부분이다. -> 테스트 모드 적용 시 실제 돈으로 결제되지 않는다. ~~*(카카오페이의 경우 가상으로 100만원이!)*~~
 
 ### 예시 API 적용 화면(카카오페이)
-* 
+![I'mport 결제 적용화면(카카오페이)](https://user-images.githubusercontent.com/31653025/85317503-70c47100-b4f9-11ea-83a7-e6551f780fec.JPG)
 
 ### 결제 완료 후 결제내역 확인
 ![결제내역 확인](https://user-images.githubusercontent.com/31653025/85316087-1a563300-b4f7-11ea-9830-fcbd8e0b96c6.jpg)
