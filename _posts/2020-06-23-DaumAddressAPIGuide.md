@@ -4,7 +4,7 @@ title: '[Daum 주소 API] 다음주소 API사용법'
 subtitle: 다음주소 API사용 방법 알아보기'
 date: 2020-06-23
 author: hansol Kim
-image: '/assets/article_images/daumAddress/address.jpg'
+image: '/assets/article_images/daumAddress/address.JPG'
 categories: Guide
 tags: 
 comments: true
