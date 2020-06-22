@@ -5,7 +5,7 @@ subtitle: 다음주소 API사용 방법 알아보기'
 date: 2020-06-23
 author: hansol Kim
 image: '/assets/article_images/daumAddress/address.jpg'
-categories: guide
+categories: Guide
 tags: 
 comments: true
 sitemap :
