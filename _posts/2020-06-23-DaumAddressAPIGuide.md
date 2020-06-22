@@ -15,16 +15,16 @@ sitemap :
 
 ## Daum 우편번호 서비스 사용 가이드
 
-### 0. 참조 주소
+### 참조 주소
 * [https://gmlwjd9405.github.io/2018/07/13/template-method-pattern.html](https://gmlwjd9405.github.io/2018/07/13/template-method-pattern.html)
 
-### 1. script 추가
+### script 추가
 ```
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 ```
 * **vue.js** 의 경우 **project경로/public/index.html** 에 추가한다.
 
-### 2. 메서드 구현
+### 메서드 구현
 ```
 new daum.Postcode({
   oncomplete: function(data) {
