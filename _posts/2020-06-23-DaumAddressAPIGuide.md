@@ -49,4 +49,8 @@ new daum.Postcode({
 ### 메서드 연결
 * 위에서 구현한 메서드를 **주소관련 form태그**에서 **onclick**(vue의 경우 @click)으로 메서드 이름을 등록하여 사용한다.
 
-### 결과화면(추후 업로드 예정)
+### 다음주소 API 적용화면
+![다음주소 API 적용화면](https://user-images.githubusercontent.com/31653025/85317559-8174e700-b4f9-11ea-8eeb-4670294dc27c.JPG)
+
+### 리뷰
+* 상당히 간단한 편에 속하는 API이면서도 프론트에서 가장 많이 사용되는 API가 아닐까 싶다.
