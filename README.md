@@ -6,15 +6,15 @@
 ### algorithm
 
 ### design pattern
-- [Design Pattern] 컴퍼지트 패턴이란
-- [Design Pattern] 추상 팩토리 패턴이란
-- [Design Pattern] 팩토리 메서드 패턴이란
-- [Design Pattern] 템플릿 메서드 패턴이란
-- [Design Pattern] 데코레이터 패턴이란
-- [Design Pattern] 옵저버 패턴이란
-- [Design Pattern] 커맨드 패턴이란
-- [Design Pattern] 스트래티지 패턴이란
-- [Design Pattern] 싱글턴 패턴이란
+- [Design Pattern] 컴퍼지트 패턴
+- [Design Pattern] 추상 팩토리 패턴
+- [Design Pattern] 팩토리 메서드 패턴
+- [Design Pattern] 템플릿 메서드 패턴
+- [Design Pattern] 데코레이터 패턴
+- [Design Pattern] 옵저버 패턴
+- [Design Pattern] 커맨드 패턴
+- [Design Pattern] 스트래티지 패턴
+- [Design Pattern] 싱글턴 패턴
 
 ### database
 
