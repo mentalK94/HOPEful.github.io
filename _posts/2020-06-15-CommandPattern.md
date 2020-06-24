@@ -101,11 +101,10 @@ public class Button {
 * 극단적으로 모드의 갯수가 100개면 Button생성자에 파라미터 수도 100개가 될 것이고, pressed메서드의 case문도 100개가 될 것이다.
 
 ### 해결책
-![개선된 Button클래스 다이어그램](https://user-images.githubusercontent.com/31653025/84620646-83481480-af13-11ea-9549-9b2d2da74ef5.PNG)
 * *Button클래스* 의 *pressed메서드* 에서 직접 기능을 구현하지 않고 버튼을 눌렀을 때 *Button 클래스* 외부에서 제공받아 캡슐화하여 *pressed메서드* 에서 호출하도록 한다.
 
 ### 개선된 설계
-![개선된 설계 다이어그램](https://user-images.githubusercontent.com/31653025/83720482-1d869d80-a674-11ea-8095-a19b5efc6ca9.PNG)
+![개선된 Button클래스 다이어그램](https://user-images.githubusercontent.com/31653025/84620646-83481480-af13-11ea-9549-9b2d2da74ef5.PNG)
 
 ```
 package model;
