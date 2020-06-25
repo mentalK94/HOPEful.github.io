@@ -42,4 +42,7 @@ social:
     share_title:
     share_link:
 
-category_list: [ OS, Network, DesignPattern ]
+category_list: [ OS, Network, DesignPattern, Guide ]
+
+disqus_url: https://disqus.com/by/mentalK94
+disqus_id: mentalK94
