@@ -27,11 +27,11 @@ layout: default
 </header>
 
 <main class="content" role="main">
-  <div>
+  <div class="category-page-listbox">
   <ul class="posts-list">
   
     {% assign category = page.category | default: page.title %}
-    <h4 class="category-page-header">{{ category }}</h4>
+    <h4 class="category-page-header">[{{ category }}]</h4>
     {% for post in site.categories[category] %}
       <li>
         <h3>
