@@ -33,7 +33,7 @@ layout: default
     {% for node in pages_list %}
       {% if node.title != null %}
         {% if node.layout == "category" %}
-          <li><a class="category-link {% if page.url == node.url %} active{% endif %}"
+          <li><a class="category-link"
           href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
         {% endif %}
       {% endif %}
