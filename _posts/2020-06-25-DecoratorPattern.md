@@ -210,7 +210,7 @@ public class Client {
 ```
 * 위와 같이 원하는 조합에 따라 동적으로 사용할 수 있다.
 
-### 일반적인 옵저버 패턴
+### 일반적인 데커레이터 패턴
 ![일반적인 데커레이터 패턴](https://user-images.githubusercontent.com/31653025/85718797-ced79b00-b729-11ea-860c-006f812e4dbb.JPG)
 
 * Component : 기본 기능을 뜻하는 ConcreteComponent와 추가 기능을 뜻하는 Decorator의 공통 기능을 정의한다. 즉, 클라이언트는 Component를 통해 실제 객체를 사용한다.
