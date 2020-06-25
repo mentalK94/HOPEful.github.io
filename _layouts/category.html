@@ -27,11 +27,12 @@ layout: default
 </header>
 
 <main class="content" role="main">
-
+  <div>
   <ul class="posts-list">
   
     {% assign category = page.category | default: page.title %}
     {% for post in site.categories[category] %}
+    <h4>[{% category %}]</h4>
       <li>
         <h3>
           <a href="{{ site.baseurl }}{{ post.url }}">
@@ -43,5 +44,5 @@ layout: default
     {% endfor %}
     
   </ul>
-
+  </div>
 </main>
