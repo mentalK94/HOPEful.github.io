@@ -31,7 +31,7 @@ layout: default
   <ul class="posts-list">
   
     {% assign category = page.category | default: page.title %}
-    <h4>{{ category }}</h4>
+    <h4 class="category-page-header">{{ category }}</h4>
     {% for post in site.categories[category] %}
       <li>
         <h3>
