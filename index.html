@@ -24,9 +24,7 @@ layout: default
         {% endif %}
       {% endfor %}
       <a href={{ "/about/" | prepend: site.baseurl }}>About</a>
-    </div>
-    <header class="site-category">
-      <ul>
+      <ul class="site-category">
         
         {% assign pages_list = site.pages %}
         {% for node in pages_list %}
@@ -39,7 +37,7 @@ layout: default
         {% endfor %}
         
     </ul>
-    </header>
+    </div>
 </header>
 
 <main class="content" role="main">
