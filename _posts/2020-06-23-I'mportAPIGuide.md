@@ -28,21 +28,21 @@ sitemap :
 * [I'mport 페이지](https://www.iamport.kr/)에 접속하여 회원가입을 한다.
 
 ### script 등록
-``` java
+~~~ javascript
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <!-- iamport.payment.js -->
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
-```
+~~~
 * 위의 **script코드**를 등록한다.
 * **vue.js**의 경우 **project경로/public/index.html**에 추가한다.
 
 #### main.js에 코드추가
-~~~ java
+~~~ javascript
 import IMP from "vue-iamport"
 ~~~
 - - -
-~~~ java
+~~~ javascript
 Vue.use(IMP, "[가맹점 고유코드 추가]")
 Vue.IMP().load()
 ~~~
@@ -51,7 +51,7 @@ Vue.IMP().load()
 * 관리자 페이지에서 **시스템설정 탭 클릭**  > **내정보** > **가맹점 식별코드** 에서 확인할 수 있다.
 
 ### 메서드에 코드 추가
-~~~ java
+~~~ javascript
 Vue.IMP().request_pay({
   pg : 'inicis', // version 1.1.0부터 지원.
   pay_method : 'card',
