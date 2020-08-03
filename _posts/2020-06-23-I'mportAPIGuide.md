@@ -28,7 +28,7 @@ sitemap :
 * [I'mport 페이지](https://www.iamport.kr/)에 접속하여 회원가입을 한다.
 
 ### script 등록
-```
+``` java
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <!-- iamport.payment.js -->
@@ -38,20 +38,20 @@ sitemap :
 * **vue.js**의 경우 **project경로/public/index.html**에 추가한다.
 
 #### main.js에 코드추가
-```
+~~~ java
 import IMP from "vue-iamport"
-```
+~~~
 - - -
-```
+~~~ java
 Vue.use(IMP, "[가맹점 고유코드 추가]")
 Vue.IMP().load()
-```
+~~~
 * main.js에서 vue-iamport부분을 import한다.
 * import 후 두 번째 코드를 추가한다. 이 때, 가맹점 고유코드는 아임포트 홈페이지에서 우측 상단에 있는 **대시보드**를 클릭하게 되면 I'mport 관리자 페이지로 들어오게 된다.
 * 관리자 페이지에서 **시스템설정 탭 클릭**  > **내정보** > **가맹점 식별코드** 에서 확인할 수 있다.
 
 ### 메서드에 코드 추가
-```
+~~~ java
 Vue.IMP().request_pay({
   pg : 'inicis', // version 1.1.0부터 지원.
   pay_method : 'card',
@@ -76,7 +76,7 @@ Vue.IMP().request_pay({
   msg += '\n\n에러내용 : ' + result_failure.error_msg;
   alert(msg);
 })
-```
+~~~
 * 위의 예시코드를 메서드에 추가하여 테스트한다.
 * 필요한 속성에 원하는 값을 넣어 사용한다. (ex. buyer_name: customer.name...)
 * 결제 방법으로 카카오페이를 사용할 경우 pg : 'kakaopay'로 변경하여 사용한다. [param 속성 세부정보 확인](https://github.com/iamport/iamport-manual/blob/master/%EC%9D%B8%EC%A6%9D%EA%B2%B0%EC%A0%9C/README.md)
