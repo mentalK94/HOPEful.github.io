@@ -22,7 +22,7 @@ sitemap :
 ### 기본 설계
 ![ScoreRecord 클래스의 값을 출력하는 DataSheetView 클래스 설계](https://user-images.githubusercontent.com/31653025/85218960-6bbcd000-b3da-11ea-9d7b-dc9bc67204f6.PNG)
 
-```
+~~~java
 package ex1;
 
 import java.util.List;
@@ -51,9 +51,9 @@ public class DataSheetView {
 	}
 
 }
-```
+~~~
 
-```
+~~~java
 package ex1;
 
 import java.util.*;
@@ -75,14 +75,14 @@ public class ScoreRecord {
 		return scores;
 	}
 }
-```
+~~~
 
 ### 문제점
 * (문제 1) 성적을 다른 형태로 출력하고 싶다면 어떤 변경 작업을 해야 하는가? 예를 들어 성적을 최대/최소 값만 출력하려면?
 * (문제 2) 여러가지 형태의 성적을 동시 혹은 순차적으로 출력하려면 어떤 변경 작업을 해야 하는가? 예를 들어 성적을 모두 출력하고 최소/최대 값을 출력하려면?
 
 ### 문제 1 - 다른 형태로 출력하고 싶은 경우
-```
+~~~java
 package ex1;
 
 import java.util.ArrayList;
@@ -106,7 +106,7 @@ public class ScoreRecord {
 		return scores;
 	}
 }
-```
+~~~
 * *ScoreRecord클래스* 를 수정해야한다. 즉 **OCP**에 위배된다.
 
 ### 문제 2 - 동시 혹은 순차적으로 성적을 출력하는 경우
@@ -127,7 +127,7 @@ public class ScoreRecord {
 * *notifyObservers메서드* 를 호출하여 옵저버들에게 성적 변경을 통보한다. 여기서 옵저버의 *update메서드* 를 호출한다.
 * **생각해보라!** 여기서 *Observer인 Statistics클래스* 가 추가된다 하더라도 *ScoreRecord클래스* 는 영향을 받지 않는다.
 
-```
+~~~java
 package ex1;
 
 import java.util.ArrayList;
@@ -151,9 +151,9 @@ public abstract class Subject {
 		}
 	}
 }
-```
+~~~
 
-```
+~~~java
 package ex1;
 
 import java.util.ArrayList;
@@ -173,15 +173,15 @@ public class ScoreRecord extends Subject {
 		return scores;
 	}
 }
-```
+~~~
 
-```
+~~~java
 package ex1;
 
 public interface Observer {
 	public void update();
 }
-```
+~~~
 
 ### 일반적인 옵저버 패턴
 ![일반적인 옵저버 패턴 다이어그램](https://user-images.githubusercontent.com/31653025/85220418-3cac5b80-b3e6-11ea-96b0-cad6ea8cccf8.PNG)

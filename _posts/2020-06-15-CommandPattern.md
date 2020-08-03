@@ -22,7 +22,7 @@ sitemap :
 ### 기본 로봇 설계
 ![램프켜는 버튼을 설계한 클래스 다이어그램](https://user-images.githubusercontent.com/31653025/84618058-e9c93480-af0b-11ea-9bdf-d4e522ae0a35.PNG)
 
-```
+~~~java
 package model;
 
 public class Button {
@@ -36,14 +36,14 @@ public class Button {
 		lamp.turnOn();
 	}
 }
-```
+~~~
 
 ### 문제점
 * (문제 1) 누군가 버튼을 눌렀을 때 램프대신 다른 기능을 실행하게 하려면 어떤 변경 작업을 해야하는가? 예를 들어 알람이 켜지게 하려면?
 * (문제 2) 버튼을 누르는 동작에 따라 다른 기능을 실행하게 하려면 어떤 변경 작업을 해야하는가? 예를 들어 버튼을 처음 눌렀을 때 램프를 켜고, 두 번째 눌렀을 때 알람을 동작하게 하려면?
 
 ### 문제 1 - 버튼을 눌렀을 때 다른 기능을 실행하는 경우
-```
+~~~java
 package model;
 
 public class Button {
@@ -60,11 +60,11 @@ public class Button {
 		alarm.start();		
 	}
 }
-```
+~~~
 * *Button클래스* 의 *pressed메서드* 를 수정해야한다. 즉 **OCP**에 위배된다.
 
 ### 문제 2 - 버튼을 누르는 동작에 따라 다른 기능을 실행하는 경우
-```
+~~~java
 package model;
 
 import enumeration.Mode;
@@ -96,7 +96,7 @@ public class Button {
 		}		
 	}
 }
-```
+~~~
 * *Button클래스* 의 *pressed메서드* 를 수정해야할 뿐만 아니라 새로운 기능 추가시 계속 수정해주어야한다.
 * 극단적으로 모드의 갯수가 100개면 Button생성자에 파라미터 수도 100개가 될 것이고, pressed메서드의 case문도 100개가 될 것이다.
 
@@ -106,7 +106,7 @@ public class Button {
 ### 개선된 설계
 ![개선된 Button클래스 다이어그램](https://user-images.githubusercontent.com/31653025/84620646-83481480-af13-11ea-9549-9b2d2da74ef5.PNG)
 
-```
+~~~java
 package model;
 
 import command.Command;
@@ -124,7 +124,7 @@ public class Button {
 		command.execute();
 	}
 }
-```
+~~~
 * 개선된 설계를 통해 *Button클래스* 의 *pressed()메서드* 는 command에게 실행을 위임하게 된다.
 * 즉, Command가 추가되더라도 *pressed()메서드* 는 변경되지 않는다.
 

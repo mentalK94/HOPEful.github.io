@@ -22,7 +22,7 @@ sitemap :
 ### 기본 설계
 ![기본 도로 및 차선을 표시하는 클래스 설계](https://user-images.githubusercontent.com/31653025/85703738-9b414480-b71a-11ea-9f04-7742c0a0be1f.JPG)
 
-```
+~~~java
 package ex1;
 
 public class RoadDisplay {
@@ -30,9 +30,9 @@ public class RoadDisplay {
 		System.out.println("기본 도로 표시");
 	}
 }
-```
+~~~
 
-```
+~~~java
 package ex1;
 
 public class RoadDisplayWithLane extends RoadDisplay {
@@ -46,14 +46,14 @@ public class RoadDisplayWithLane extends RoadDisplay {
 		System.out.println("차선 표시");
 	}
 }
-```
+~~~
 
 ### 문제점
 * (문제 1) 또다른 도로 표시 기능을 추가로 구현하고 싶다면 어떻게 해야 하는가? 예를 들어 기본 도로 표시에 교통량을 표시하고 싶다면?
 * (문제 2) 여러가지 추가 기능을 조합해 제공하고 싶다면 어떻게 해야 하는가? 예를 들어 기본 도로 표시에 차선 표시 기능과 교통량 표시 기능을 함께 제공하고 싶다면?
 
 ### 문제 1 - 또다른 도로 표시 기능을 추가로 구현하는 경우
-```
+~~~java
 package ex1;
 
 public class RoadDisplayWithTraffic extends RoadDisplay{
@@ -67,7 +67,7 @@ public class RoadDisplayWithTraffic extends RoadDisplay{
 		System.out.println("교통량 표시");
 	}
 }
-```
+~~~
 * 기본 도로에 교통량을 표시하는 *RoadDisplayWithTraffic 클래스* 를 추가적으로 구현한 코드이다.
 * 추가적으로 구현하는데에 있어 기존의 코드를 건드리지 않으므로 적절한 설계 방법이라고 볼 수 있다.
 
@@ -89,13 +89,13 @@ public class RoadDisplayWithTraffic extends RoadDisplay{
 * 도로를 표시하는 기본 기능만 사용할 경우 RoadDisplay객체를 이용한다.
 * 추가 기능을 사용할 경우 기능에 맞는 객체를 이용한다.
 
-```
+~~~java
 public abstract class Display {
 	public abstract void draw();
 }
-```
+~~~
 
-```
+~~~java
 package ex1;
 
 public abstract class DisplayDecorator extends Display{
@@ -111,9 +111,9 @@ public abstract class DisplayDecorator extends Display{
 		decoratedDisplay.draw();
 	}
 }
-```
+~~~
 
-```
+~~~java
 package ex1;
 
 public class LaneDecorator extends DisplayDecorator {
@@ -133,9 +133,9 @@ public class LaneDecorator extends DisplayDecorator {
 	}
 
 }
-```
+~~~
 
-```
+~~~java
 package ex1;
 
 public class TrafficDecorator extends DisplayDecorator {
@@ -155,12 +155,12 @@ public class TrafficDecorator extends DisplayDecorator {
 	}
 
 }
-```
+~~~
 
 ### 개선된 설계에서 기능을 추가할 경우
 ![개선된 추가 기능 조합의 설계에서의 기능 추가](https://user-images.githubusercontent.com/31653025/85716946-f0378780-b727-11ea-8401-3ba439a42f8c.JPG)
 
-```
+~~~java
 package ex1;
 
 public class CrossingDecorator extends DisplayDecorator {
@@ -179,12 +179,12 @@ public class CrossingDecorator extends DisplayDecorator {
 		System.out.println("교차로 표시");
 	}
 }
-```
+~~~
 
 * 기존의 코드를 건드리거나 조합에 따른 클래스 구현이 필요가 없다.
 * 즉, 추가 기능에 대한 부분만 구현해주면 된다.
 
-```
+~~~java
 package ex1;
 
 public class Client {
@@ -207,7 +207,7 @@ public class Client {
 		Display roadWithLaneAndCrossing = new CrossingDecorator(new LaneDecorator(roadDisplay));
 		roadWithLaneAndCrossing.draw();
 	}
-```
+~~~
 * 위와 같이 원하는 조합에 따라 동적으로 사용할 수 있다.
 
 ### 일반적인 데커레이터 패턴
