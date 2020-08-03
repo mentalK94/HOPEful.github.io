@@ -34,7 +34,7 @@ sitemap :
 
 ### 문제 2 - 동적 스케줄링을 지원해야 한다면?(ex. 오전에는 ResponseTime, 오후에는 Throughput을 사용하는 경우)
 
-~~~javascript
+~~~ java
 /* ElevatorManager class중 일부분 */
 
 void requestElevator(int destination, Direction direction) {
@@ -48,6 +48,7 @@ void requestElevator(int destination, Direction direction) {
 		scheduler = new ThroughputScheduler();
 }
 ~~~
+
 * 스케줄링 전략이 변경될 때마다 *ElevatorManager* 에서 *requestElevator* 메서드도 수정되어야 하는 문제가 발생.
 
 ### 해결책
@@ -58,7 +59,7 @@ void requestElevator(int destination, Direction direction) {
 ![팩토리 메서드를 이용한 스케줄링 전략 객체의 생성](https://user-images.githubusercontent.com/31653025/87274379-96e89a00-c516-11ea-84f5-02d5acb210cf.JPG)
 * *getScheduler* 메서드가 스케줄링 전략에 맞는 객체를 생성하는 기능을 구현한 코드이다.
 
-```
+~~~ java
 package framework;
 
 public class SchedulerFactory {
@@ -86,7 +87,8 @@ public class SchedulerFactory {
 		return scheduler;
 	}
 }
-```
+~~~
+
 * 객체 생성시 앞서서 배웠던 **싱글턴 패턴** 을 적용하여 객체를 생성 및 사용하고 있다.
 * 의문) 팩토리 메서드 패턴을 사용하여 *getScheduler* 메서드를 구현했는데 만약 스케줄링 전략이 추가되면 *getScheduler* 코드역시 수정해야하는 것 아닌가..추후 이해하게 되면 수정본 업로드 예정
 
