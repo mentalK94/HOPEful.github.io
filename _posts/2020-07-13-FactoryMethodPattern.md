@@ -34,7 +34,7 @@ sitemap :
 
 ### 문제 2 - 동적 스케줄링을 지원해야 한다면?(ex. 오전에는 ResponseTime, 오후에는 Throughput을 사용하는 경우)
 
-~~~java
+~~~javascript
 /* ElevatorManager class중 일부분 */
 
 void requestElevator(int destination, Direction direction) {
