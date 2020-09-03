@@ -142,3 +142,7 @@ public class Solution {
 
 }
 ~~~
+
+### 제출 결과
+![swexpert-1251 결과화면](https://user-images.githubusercontent.com/31653025/92076845-3d099f80-edf6-11ea-8e5b-b485ef4980a4.JPG)
+* 예상보다 실행시간이 적게 나왔다
