@@ -5,7 +5,7 @@ subtitle:
 date: 2020-09-02
 author: hansol Kim
 image: '/assets/article_images/algorithm/algorithm.jpg'
-categories: ProblemSolving
+categories: Problem Solving
 tags: 
 comments: true
 sitemap :
