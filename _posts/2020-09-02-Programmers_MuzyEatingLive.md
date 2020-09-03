@@ -2,7 +2,7 @@
 layout: post
 title: '[2019 카카오 블라인드 채용] 무지의 먹방 라이브 리뷰'
 subtitle: 
-date: 2020-08-31
+date: 2020-09-02
 author: hansol Kim
 image: '/assets/article_images/algorithm/algorithm.jpg'
 categories: ProblemSolving
@@ -13,7 +13,7 @@ sitemap :
   priority : 1.0
 ---
 
-## 문제링크
+### 문제 링크
 * [2019 kakao blind recruitment - 무지의 먹방 라이브](https://programmers.co.kr/learn/courses/30/lessons/42891)
 
 
